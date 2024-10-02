@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+
+{% block element %}
+<div class="row d-flex flex-wrap justify-content-center px-5 pt-5" >
+    {% for itm in data %}
+    <div class="col-sm-3">
+      <div class="card mx-2">
+        <div class="card-body">
+                <h5 class="card-title">{{itm.title}}</h5>
+                <p class="card-text">{{itm.taskDescription}}</p>
+                <h5>Assign Date :{{itm.date}} </h5>
+                <a href="{% url 'edit_task1' itm.id %}" class="btn btn-primary">edit</a>
+                <a href="{% url 'task_delete' itm.id %}" class="btn btn-danger">Delete</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+</div>    
+
+{%endblock%}

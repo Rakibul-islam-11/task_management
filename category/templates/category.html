@@ -1,0 +1,9 @@
+{% extends 'index.html' %}
+{% block element %}
+{% load crispy_forms_tags %}
+    <form method="post" style="width: 400px; margin: auto;">
+       {% csrf_token %}
+       {{ category_form | crispy }}
+       <button class="btn btn-primary">Submit</button>
+    </form>
+{%endblock%}
